@@ -1,0 +1,6 @@
+framework module VirgilE3Kit {
+  umbrella header "VirgilE3Kit-umbrella.h"
+
+  export *
+  module * { export * }
+}

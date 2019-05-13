@@ -1,0 +1,6 @@
+framework module VirgilCryptoPythia {
+  umbrella header "VirgilCryptoPythia-umbrella.h"
+
+  export *
+  module * { export * }
+}

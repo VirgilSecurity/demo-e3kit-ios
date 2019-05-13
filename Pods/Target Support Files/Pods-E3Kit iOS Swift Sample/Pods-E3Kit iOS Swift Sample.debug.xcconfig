@@ -1,0 +1,11 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCrypto" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCryptoAPI" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCryptoFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCryptoPythia" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilE3Kit" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilSDK" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilSDKKeyknox" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilSDKPythia" "${PODS_ROOT}/VSCCrypto/Carthage/iOS"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCrypto/VirgilCrypto.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCryptoAPI/VirgilCryptoAPI.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCryptoFoundation/VirgilCryptoFoundation.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilCryptoPythia/VirgilCryptoPythia.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilE3Kit/VirgilE3Kit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilSDK/VirgilSDK.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilSDKKeyknox/VirgilSDKKeyknox.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VirgilSDKPythia/VirgilSDKPythia.framework/Headers"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_LDFLAGS = $(inherited) -framework "VSCCommon" -framework "VSCFoundation" -framework "VSCPythia" -framework "VirgilCrypto" -framework "VirgilCryptoAPI" -framework "VirgilCryptoFoundation" -framework "VirgilCryptoPythia" -framework "VirgilE3Kit" -framework "VirgilSDK" -framework "VirgilSDKKeyknox" -framework "VirgilSDKPythia"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

@@ -1,0 +1,6 @@
+framework module VirgilCryptoAPI {
+  umbrella header "VirgilCryptoAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}
