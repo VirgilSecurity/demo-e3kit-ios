@@ -1,6 +1,0 @@
-framework module Pods_E3Kit_iOS_Swift_Sample {
-  umbrella header "Pods-E3Kit iOS Swift Sample-umbrella.h"
-
-  export *
-  module * { export * }
-}

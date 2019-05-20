@@ -1,6 +1,0 @@
-framework module VirgilSDKKeyknox {
-  umbrella header "VirgilSDKKeyknox-umbrella.h"
-
-  export *
-  module * { export * }
-}
