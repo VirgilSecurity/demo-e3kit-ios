@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:E3Kit iOS Swift Sample.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:E3Kit iOS Swift Sample.xcodeproj">
    </FileRef>
    <FileRef

@@ -9,11 +9,12 @@
 //# start of snippet: e3kit_imports
 import VirgilE3Kit
 import VirgilCrypto
+import VirgilSDK
 //# end of snippet: e3kit_imports
 
 typealias Completion = () -> Void
 typealias FailableCompletion = (Error?) -> Void
-typealias ResultCompletion<T> = (Result<T, Error>) -> Void
+typealias ResultCompletion<T> = (Result<T>) -> Void
 
 class Device {
     let identity: String
@@ -100,7 +101,7 @@ class Device {
             if let result = result {
                 completion?(.success(result)) //# remove_from_snippet
             } else if let error = error {
-                completion?(.failure(error))
+                completion?(.failure(error)) //# remove_from_snippet
             }
         }
         //# end of snippet: e3kit_lookup_public_keys
