@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80A3DDF022CE227200E73510 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3DDEF22CE227200E73510 /* AppError.swift */; };
+		80AFBA8ADCCDBCC6B4E4C80E /* Pods_E3Kit_iOS_Swift_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512D8943D895699BBF906A4C /* Pods_E3Kit_iOS_Swift_Sample.framework */; };
 		80ED28F42268DD70009AB395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED28F32268DD70009AB395 /* AppDelegate.swift */; };
 		80ED28F62268DD70009AB395 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED28F52268DD70009AB395 /* ViewController.swift */; };
 		80ED28F92268DD70009AB395 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ED28F72268DD70009AB395 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		512D8943D895699BBF906A4C /* Pods_E3Kit_iOS_Swift_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E3Kit_iOS_Swift_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80A3DDEF22CE227200E73510 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		80ED28F02268DD70009AB395 /* E3Kit iOS Swift Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E3Kit iOS Swift Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ED28F32268DD70009AB395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ED28F52268DD70009AB395 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		80ED28FD2268DD72009AB395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80ED28FF2268DD72009AB395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80ED29052268DE38009AB395 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		B48D972C20541C53A8DB4D4A /* Pods-E3Kit iOS Swift Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E3Kit iOS Swift Sample.debug.xcconfig"; path = "Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		DA5E3EE9AC7EAF6860141565 /* Pods-E3Kit iOS Swift Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E3Kit iOS Swift Sample.release.xcconfig"; path = "Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80AFBA8ADCCDBCC6B4E4C80E /* Pods_E3Kit_iOS_Swift_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 		20DC513F1785875B936D6A7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				B48D972C20541C53A8DB4D4A /* Pods-E3Kit iOS Swift Sample.debug.xcconfig */,
+				DA5E3EE9AC7EAF6860141565 /* Pods-E3Kit iOS Swift Sample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -50,6 +59,7 @@
 				80ED28F22268DD70009AB395 /* E3Kit iOS Swift Sample */,
 				80ED28F12268DD70009AB395 /* Products */,
 				20DC513F1785875B936D6A7B /* Pods */,
+				C5AAAD28776E98B591B8D026 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,12 +77,21 @@
 				80ED28F32268DD70009AB395 /* AppDelegate.swift */,
 				80ED28F52268DD70009AB395 /* ViewController.swift */,
 				80ED29052268DE38009AB395 /* Device.swift */,
+				80A3DDEF22CE227200E73510 /* AppError.swift */,
 				80ED28F72268DD70009AB395 /* Main.storyboard */,
 				80ED28FA2268DD72009AB395 /* Assets.xcassets */,
 				80ED28FC2268DD72009AB395 /* LaunchScreen.storyboard */,
 				80ED28FF2268DD72009AB395 /* Info.plist */,
 			);
 			path = "E3Kit iOS Swift Sample";
+			sourceTree = "<group>";
+		};
+		C5AAAD28776E98B591B8D026 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				512D8943D895699BBF906A4C /* Pods_E3Kit_iOS_Swift_Sample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80ED29022268DD72009AB395 /* Build configuration list for PBXNativeTarget "E3Kit iOS Swift Sample" */;
 			buildPhases = (
+				D04D2EF663A3BC1CBED95D64 /* [CP] Check Pods Manifest.lock */,
 				80ED28EC2268DD70009AB395 /* Sources */,
 				80ED28ED2268DD70009AB395 /* Frameworks */,
 				80ED28EE2268DD70009AB395 /* Resources */,
+				3B249DAF1FBD1CBD64162B8B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,11 +163,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B249DAF1FBD1CBD64162B8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample-frameworks.sh",
+				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCCommon.framework",
+				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCFoundation.framework",
+				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCPythia.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilCrypto/VirgilCrypto.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilCryptoAPI/VirgilCryptoAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilCryptoFoundation/VirgilCryptoFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilCryptoPythia/VirgilCryptoPythia.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilE3Kit/VirgilE3Kit.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilSDK/VirgilSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilSDKKeyknox/VirgilSDKKeyknox.framework",
+				"${BUILT_PRODUCTS_DIR}/VirgilSDKPythia/VirgilSDKPythia.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCPythia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCrypto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoPythia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilE3Kit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDKKeyknox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDKPythia.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D04D2EF663A3BC1CBED95D64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-E3Kit iOS Swift Sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		80ED28EC2268DD70009AB395 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A3DDF022CE227200E73510 /* AppError.swift in Sources */,
 				80ED29062268DE38009AB395 /* Device.swift in Sources */,
 				80ED28F62268DD70009AB395 /* ViewController.swift in Sources */,
 				80ED28F42268DD70009AB395 /* AppDelegate.swift in Sources */,
@@ -293,6 +382,7 @@
 		};
 		80ED29032268DD72009AB395 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48D972C20541C53A8DB4D4A /* Pods-E3Kit iOS Swift Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,6 +401,7 @@
 		};
 		80ED29042268DD72009AB395 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA5E3EE9AC7EAF6860141565 /* Pods-E3Kit iOS Swift Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
