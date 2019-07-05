@@ -10,18 +10,27 @@ import UIKit
 import VirgilE3Kit
 import VirgilCrypto
 
+var log: (_ text: Any) -> Void = { print($0) }
+
 class ViewController: UIViewController {
+    @IBOutlet weak var logsTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        log = { [weak self] text in
+            DispatchQueue.main.async {
+                self?.logsTextView.text += "\(text)\n"
+            }
+        }
+
         initializeUsers {
             self.registerUsers {
                 self.lookupPublicKeys {
                     do {
                         try self.encryptAndDecrypt()
                     } catch(let e) {
-                        print(e)
+                        log(e)
                     }
                 }
             }
@@ -35,17 +44,17 @@ class ViewController: UIViewController {
     var aliceLookup: EThree.LookupResult?
 
     func initializeUsers(_ completion: @escaping Completion) {
-        print("Initializing Alice")
+        log("Initializing Alice")
         alice.initialize { error in
             if let error = error {
-                print("Failed initializing Alice: \(error)")
+                log("Failed initializing Alice: \(error)")
                 return
             }
 
-            print("Initializing Bob")
+            log("Initializing Bob")
             self.bob.initialize { error in
                 if let error = error {
-                    print("Failed initializing Bob: \(error)")
+                    log("Failed initializing Bob: \(error)")
                     return
                 }
 
@@ -55,17 +64,17 @@ class ViewController: UIViewController {
     }
 
     func registerUsers(_ completion: @escaping Completion) {
-        print("Registering Alice")
+        log("Registering Alice")
         alice.register { error in
             if let error = error {
-                print("Failed registering Alice: \(error)")
+                log("Failed registering Alice: \(error)")
                 return
             }
 
-            print("Registering Bob")
+            log("Registering Bob")
             self.bob.register { error in
                 if let error = error {
-                    print("Failed registering Bob: \(error)")
+                    log("Failed registering Bob: \(error)")
                     return
                 }
 
@@ -76,20 +85,20 @@ class ViewController: UIViewController {
 
 
     func lookupPublicKeys(_ completion: @escaping Completion) {
-        print("Looking up Bob's public key")
+        log("Looking up Bob's public key")
         alice.lookupPublicKeys(of: ["Bob"]) {
             switch $0 {
             case .failure(let error):
-                print("Failed looking up Bob's public key: \(error)")
+                log("Failed looking up Bob's public key: \(error)")
             case .success(let lookup):
                 self.bobLookup = lookup
             }
 
-            print("Looking up Alice's public key")
+            log("Looking up Alice's public key")
             self.bob.lookupPublicKeys(of: ["Alice"]) {
                 switch $0 {
                 case .failure(let error):
-                    print("Failed looking up Alice's public key: \(error)")
+                    log("Failed looking up Alice's public key: \(error)")
                 case .success(let lookup):
                     self.aliceLookup = lookup
                     completion()
@@ -100,14 +109,14 @@ class ViewController: UIViewController {
 
     func encryptAndDecrypt() throws {
         let aliceEncryptedText = try alice.encrypt(text: "Hello Bob!", for: bobLookup)
-        print("Alice encrypts and signs: '\(aliceEncryptedText)'")
+        log("Alice encrypts and signs: '\(aliceEncryptedText)'")
         let aliceDecryptedText = try bob.decrypt(text: aliceEncryptedText, from: aliceLookup!["Alice"])
-        print("Bob decrypts and verifies Alice's signature: '\(aliceDecryptedText)'")
+        log("Bob decrypts and verifies Alice's signature: '\(aliceDecryptedText)'")
 
         let bobEncryptedText = try bob.encrypt(text: "Hello Alice!", for: aliceLookup)
-        print("Bob encrypts and signs: '\(bobEncryptedText)'")
+        log("Bob encrypts and signs: '\(bobEncryptedText)'")
         let bobDecryptedText = try alice.decrypt(text: bobEncryptedText, from: bobLookup!["Bob"])
-        print("Alice decrypts and verifies Bob's signature: '\(bobDecryptedText)'")
+        log("Alice decrypts and verifies Bob's signature: '\(bobDecryptedText)'")
     }
 
 }
