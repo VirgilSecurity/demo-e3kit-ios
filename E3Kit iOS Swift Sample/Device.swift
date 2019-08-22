@@ -46,7 +46,10 @@ class Device: NSObject {
 
             let request = Request(url: url, method: .post, headers: headers, body: requestBody)
 
-            guard let body = (try? connection.send(request))?.body else {
+            guard
+                let response = try? connection.send(request).startSync().get(),
+                let body = response.body
+            else {
                 return nil
             }
 
@@ -80,7 +83,7 @@ class Device: NSObject {
             let connection = HttpConnection()
 
             guard
-                let response = try? connection.send(request),
+                let response = try? connection.send(request).startSync().get(),
                 let body = response.body,
                 let json = try? JSONSerialization.jsonObject(with: body, options: []) as? [String: Any],
                 let jwtString = json["virgilToken"] as? String
