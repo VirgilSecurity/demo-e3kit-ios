@@ -1,31 +1,24 @@
 PODS:
-  - VirgilCrypto (5.0.0-alpha2):
-    - VirgilCryptoAPI (~> 1.0)
-    - VirgilCryptoFoundation (~> 0.6.0)
-  - VirgilCryptoAPI (1.0.5)
-  - VirgilCryptoFoundation (0.6.0):
-    - VSCCrypto/Common (= 0.6.0)
-    - VSCCrypto/Foundation (= 0.6.0)
-  - VirgilCryptoPythia (0.6.0):
-    - VirgilCryptoFoundation (= 0.6.0)
-    - VSCCrypto/Common (= 0.6.0)
-    - VSCCrypto/Foundation (= 0.6.0)
-    - VSCCrypto/Pythia (= 0.6.0)
-  - VirgilE3Kit (0.5.1):
-    - VirgilSDKKeyknox (~> 0.4.1)
-    - VirgilSDKPythia (~> 0.5.1)
-  - VirgilSDK (5.7.2):
-    - VirgilCryptoAPI (~> 1.0)
-  - VirgilSDKKeyknox (0.4.1):
-    - VirgilCrypto (~> 5.0.0-alpha2)
-    - VirgilSDK (~> 5.7)
-  - VirgilSDKPythia (0.5.1):
-    - VirgilCrypto (~> 5.0.0-alpha2)
-    - VirgilCryptoPythia (~> 0.6.0)
-    - VirgilSDK (~> 5.7)
-  - VSCCrypto/Common (0.6.0)
-  - VSCCrypto/Foundation (0.6.0)
-  - VSCCrypto/Pythia (0.6.0)
+  - VirgilCrypto (5.0.0):
+    - VirgilCryptoFoundation (~> 0.8.0)
+  - VirgilCryptoFoundation (0.8.1):
+    - VSCCrypto/Common (= 0.8.1)
+    - VSCCrypto/Foundation (= 0.8.1)
+  - VirgilCryptoPythia (0.8.1):
+    - VirgilCryptoFoundation (= 0.8.1)
+    - VSCCrypto/Common (= 0.8.1)
+    - VSCCrypto/Foundation (= 0.8.1)
+    - VSCCrypto/Pythia (= 0.8.1)
+  - VirgilE3Kit (0.6.0):
+    - VirgilSDKPythia (~> 0.6.0)
+  - VirgilSDK (6.0.0):
+    - VirgilCrypto (~> 5.0)
+  - VirgilSDKPythia (0.6.0):
+    - VirgilCryptoPythia (~> 0.8.0)
+    - VirgilSDK (~> 6.0)
+  - VSCCrypto/Common (0.8.1)
+  - VSCCrypto/Foundation (0.8.1)
+  - VSCCrypto/Pythia (0.8.1)
 
 DEPENDENCIES:
   - VirgilE3Kit
@@ -33,25 +26,21 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - VirgilCrypto
-    - VirgilCryptoAPI
     - VirgilCryptoFoundation
     - VirgilCryptoPythia
     - VirgilE3Kit
     - VirgilSDK
-    - VirgilSDKKeyknox
     - VirgilSDKPythia
     - VSCCrypto
 
 SPEC CHECKSUMS:
-  VirgilCrypto: a83147fcf773a8ca83eff8f15c0ed09fa772dd8c
-  VirgilCryptoAPI: 1c8dd0ccd88d8884c34e5afac7fed787feb0fcee
-  VirgilCryptoFoundation: cd247acb1c15d66bb31ebbbace194dee15aaf0f3
-  VirgilCryptoPythia: 4adc5e99e63233a18949c1e8487b42d0d03cfb5e
-  VirgilE3Kit: e7cf3ce650d3a04e4d6d9dc2a745ba7aa2b94a65
-  VirgilSDK: 85d13bb1269495989f1268895ffcbd306cda1232
-  VirgilSDKKeyknox: d387ffe949a7c024317e6ea18a281a68f10d8c47
-  VirgilSDKPythia: 38f763046d3c9c248eedf1dace2b7eb54bffb05d
-  VSCCrypto: 112af40992f3aac65816556e960873855b4cf049
+  VirgilCrypto: 9c6a42a21a1e67ea24db70c9f7f99953fb43bf5f
+  VirgilCryptoFoundation: fdad3997f220588d9e102232c0db11a66c778b6b
+  VirgilCryptoPythia: 8b2617df1261f1e63357824ccbda3d078ab3258d
+  VirgilE3Kit: 2a419db1f706048096a83a2a9c101897ac1ecd00
+  VirgilSDK: effde1b58bb9ed5a8c6130089f8adcd51262ad5c
+  VirgilSDKPythia: d73c91b0b215e330aa330137b4abfa5e96eb553e
+  VSCCrypto: ecf239de63626f91db8561b52b472f387d2f1b41
 
 PODFILE CHECKSUM: 6f61046b71434fac41435143441a03c4bcad407b
 

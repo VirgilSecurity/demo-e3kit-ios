@@ -177,12 +177,10 @@
 				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCFoundation.framework",
 				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCPythia.framework",
 				"${BUILT_PRODUCTS_DIR}/VirgilCrypto/VirgilCrypto.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilCryptoAPI/VirgilCryptoAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/VirgilCryptoFoundation/VirgilCryptoFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/VirgilCryptoPythia/VirgilCryptoPythia.framework",
 				"${BUILT_PRODUCTS_DIR}/VirgilE3Kit/VirgilE3Kit.framework",
 				"${BUILT_PRODUCTS_DIR}/VirgilSDK/VirgilSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilSDKKeyknox/VirgilSDKKeyknox.framework",
 				"${BUILT_PRODUCTS_DIR}/VirgilSDKPythia/VirgilSDKPythia.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -193,12 +191,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCPythia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCrypto.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoPythia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilE3Kit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDKKeyknox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDKPythia.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
