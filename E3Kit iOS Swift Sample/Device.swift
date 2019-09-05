@@ -21,7 +21,9 @@ class Device: NSObject {
     var eThree: EThree?
     var authToken: String?
 
-    let benchmarking = true
+    // setting this to true can cause a momentary hang in the app
+    // because encryption and decryption will be ran 100x each.
+    let benchmarking = false
 
     init(withIdentity identity: String) {
         self.identity = identity
