@@ -88,9 +88,9 @@ class ViewController: UIViewController {
     }
 
     func encryptAndDecrypt() throws {
-        let aliceEncryptedText = try alice.encrypt(text: "Hello \(bob.identity)!", for: bobLookup)
+        let aliceEncryptedText = try alice.encrypt(text: "Hello \(bob.identity)! How are you?", for: bobLookup)
         _ = try bob.decrypt(text: aliceEncryptedText, from: aliceLookup![alice.identity])
-        let bobEncryptedText = try bob.encrypt(text: "Hello \(alice.identity)!", for: aliceLookup)
+        let bobEncryptedText = try bob.encrypt(text: "Hello \(alice.identity)! How are you?", for: aliceLookup)
         _  = try alice.decrypt(text: bobEncryptedText, from: bobLookup![bob.identity])
     }
 }
