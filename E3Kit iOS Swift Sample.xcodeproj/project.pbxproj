@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80A3DDF022CE227200E73510 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3DDEF22CE227200E73510 /* AppError.swift */; };
+		80AAFC3123215D68007A5D51 /* TimeInMs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AAFC3023215D68007A5D51 /* TimeInMs.swift */; };
 		80AFBA8ADCCDBCC6B4E4C80E /* Pods_E3Kit_iOS_Swift_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512D8943D895699BBF906A4C /* Pods_E3Kit_iOS_Swift_Sample.framework */; };
 		80ED28F42268DD70009AB395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED28F32268DD70009AB395 /* AppDelegate.swift */; };
 		80ED28F62268DD70009AB395 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ED28F52268DD70009AB395 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		512D8943D895699BBF906A4C /* Pods_E3Kit_iOS_Swift_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E3Kit_iOS_Swift_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A3DDEF22CE227200E73510 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		80AAFC3023215D68007A5D51 /* TimeInMs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInMs.swift; sourceTree = "<group>"; };
 		80ED28F02268DD70009AB395 /* E3Kit iOS Swift Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E3Kit iOS Swift Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ED28F32268DD70009AB395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ED28F52268DD70009AB395 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				80ED28F32268DD70009AB395 /* AppDelegate.swift */,
 				80ED28F52268DD70009AB395 /* ViewController.swift */,
 				80ED29052268DE38009AB395 /* Device.swift */,
+				80AAFC3023215D68007A5D51 /* TimeInMs.swift */,
 				80A3DDEF22CE227200E73510 /* AppError.swift */,
 				80ED28F72268DD70009AB395 /* Main.storyboard */,
 				80ED28FA2268DD72009AB395 /* Assets.xcassets */,
@@ -235,6 +238,7 @@
 				80ED29062268DE38009AB395 /* Device.swift in Sources */,
 				80ED28F62268DD70009AB395 /* ViewController.swift in Sources */,
 				80ED28F42268DD70009AB395 /* AppDelegate.swift in Sources */,
+				80AAFC3123215D68007A5D51 /* TimeInMs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

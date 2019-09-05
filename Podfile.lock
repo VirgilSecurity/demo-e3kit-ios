@@ -21,7 +21,7 @@ PODS:
   - VSCCrypto/Pythia (0.8.1)
 
 DEPENDENCIES:
-  - VirgilE3Kit
+  - VirgilE3Kit (~> 0.6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -42,6 +42,6 @@ SPEC CHECKSUMS:
   VirgilSDKPythia: d73c91b0b215e330aa330137b4abfa5e96eb553e
   VSCCrypto: ecf239de63626f91db8561b52b472f387d2f1b41
 
-PODFILE CHECKSUM: 6f61046b71434fac41435143441a03c4bcad407b
+PODFILE CHECKSUM: 71dba1bd7e6d32dabe87d2411cc4d8bb74cec0f5
 
 COCOAPODS: 1.6.1

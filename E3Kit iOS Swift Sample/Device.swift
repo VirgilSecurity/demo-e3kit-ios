@@ -21,8 +21,14 @@ class Device: NSObject {
     var eThree: EThree?
     var authToken: String?
 
+    let benchmarking = true
+
     init(withIdentity identity: String) {
         self.identity = identity
+    }
+
+    func _log(_ text: Any) {
+        log("[\(identity)] \(text)")
     }
 
     // First step in e3kit flow is to initialize the SDK (eThree instance)
@@ -97,6 +103,12 @@ class Device: NSObject {
 
         //# start of snippet: e3kit_initialize
         EThree.initialize(tokenCallback: tokenCallback) { eThree, error in
+            if let error = error {
+                self._log("Failed initializing: \(error)")
+            } else {
+                self._log("Initialized")
+            }
+
             self.eThree = eThree
             completion?(error)
         }
@@ -117,13 +129,20 @@ class Device: NSObject {
 
         //# start of snippet: e3kit_register
         eThree.register { error in
+            if let error = error {
+                self._log("Failed registering: \(error)")
+            }
+
             if error as? EThreeError == .userIsAlreadyRegistered {
                 eThree.rotatePrivateKey { error in
+                    self._log("Rotated private key instead")
                     completion?(error)
                 }
 
                 return
             }
+
+            self._log("Registered")
 
             completion?(error)
         }
@@ -139,8 +158,10 @@ class Device: NSObject {
         //# start of snippet: e3kit_lookup_public_keys
         eThree.lookupPublicKeys(of: identities) { result, error in
             if let result = result {
+                self._log("Looked up \(identities)'s public key")
                 completion?(.success(result))
             } else if let error = error {
+                self._log("Failed looking up \(identities)'s public key: \(error)")
                 completion?(.failure(error))
             }
         }
@@ -152,11 +173,23 @@ class Device: NSObject {
             throw AppError.eThreeNotInitialized
         }
 
-        //# start of snippet: e3kit_encrypt
-        let encryptedText = try eThree.encrypt(text: text, for: lookupResult)
-        //# end of snippet: e3kit_encrypt
+        let then = timeInMs()
 
-        return encryptedText
+        do {
+            let repetitions = benchmarking ? 100 : 1
+            var encryptedText: String = ""
+            for _ in (1...repetitions) {
+                //# start of snippet: e3kit_encrypt
+                encryptedText = try eThree.encrypt(text: text, for: lookupResult)
+                //# end of snippet: e3kit_encrypt
+            }
+            let time = (timeInMs() - then)/Double(repetitions)
+            self._log("Encrypted and signed: '\(encryptedText)'. Took: \(time)ms")
+            return encryptedText
+        } catch(let error) {
+            self._log("Failed encrypting and signing: \(error)")
+            throw error
+        }
     }
 
     func decrypt(text: String, from senderPublicKey: VirgilPublicKey? = nil) throws -> String {
@@ -164,11 +197,23 @@ class Device: NSObject {
             throw AppError.eThreeNotInitialized
         }
 
-        //# start of snippet: e3kit_decrypt
-        let decryptedText = try eThree.decrypt(text: text, from: senderPublicKey)
-        //# end of snippet: e3kit_decrypt
+        let then = timeInMs()
 
-        return decryptedText
+        do {
+            let repetitions = benchmarking ? 100 : 1
+            var decryptedText: String = ""
+            for _ in (1...repetitions) {
+                //# start of snippet: e3kit_decrypt
+                decryptedText = try eThree.decrypt(text: text, from: senderPublicKey)
+                //# end of snippet: e3kit_decrypt
+            }
+            let time = (timeInMs() - then)/Double(repetitions)
+            self._log("Decrypted and verified: '\(decryptedText)'. Took: \(time)ms")
+            return decryptedText
+        } catch(let error) {
+            self._log("Failed decrypting and verifying: \(error)")
+            throw error
+        }
     }
 
     func hasLocalPrivateKey() throws -> Bool {
@@ -220,5 +265,18 @@ class Device: NSObject {
             completion?(error)
         }
         //# end of snippet: e3kit_rotate_private_key
+    }
+
+    func unregister(completion: FailableCompletion? = nil) {
+        guard let eThree = eThree else {
+            completion?(AppError.eThreeNotInitialized)
+            return
+        }
+
+        //# start of snippet: e3kit_unregister
+        eThree.unregister { error in
+            completion?(error)
+        }
+        //# end of snippet: e3kit_unregister
     }
 }
