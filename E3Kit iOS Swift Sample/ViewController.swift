@@ -43,8 +43,8 @@ class ViewController: UIViewController {
         }
     }
 
-    let alice = Device(withIdentity: "Alice")
-    let bob = Device(withIdentity: "Bob")
+    let alice = Device(withIdentity: "Aliceq")
+    let bob = Device(withIdentity: "Bobw")
 
     var bobLookup: FindUsersResult?
     var aliceLookup: FindUsersResult?
@@ -89,9 +89,9 @@ class ViewController: UIViewController {
 
     func encryptAndDecrypt() throws {
         let aliceEncryptedText = try alice.encrypt(text: "Hello \(bob.identity)! How are you?", for: bobLookup)
-        _ = try bob.decrypt(text: aliceEncryptedText, from: bobLookup?[bob.identity])
+        _ = try bob.decrypt(text: aliceEncryptedText, from: aliceLookup?[alice.identity])
         let bobEncryptedText = try bob.encrypt(text: "Hello \(alice.identity)! How are you?", for: aliceLookup)
-        _  = try alice.decrypt(text: bobEncryptedText, from: bobLookup?[bob.identity])
+        _ = try alice.decrypt(text: bobEncryptedText, from: bobLookup?[bob.identity])
     }
 }
 
