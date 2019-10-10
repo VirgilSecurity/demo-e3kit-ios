@@ -151,14 +151,14 @@ class Device: NSObject {
         //# end of snippet: e3kit_register
     }
 
-    func lookupPublicKeys(of identities: [String], completion: ResultCompletion<EThree.LookupResult>?) {
+    func findUsers(with identities: [String], completion: ResultCompletion<FindUsersResult>?) {
         guard let eThree = eThree else {
             completion?(.failure(AppError.eThreeNotInitialized))
             return
         }
 
         //# start of snippet: e3kit_lookup_public_keys
-        eThree.lookupPublicKeys(of: identities) { result, error in
+        eThree.findUsers(with: identities) { result, error in
             if let result = result {
                 self._log("Looked up \(identities)'s public key")
                 completion?(.success(result))
@@ -170,7 +170,7 @@ class Device: NSObject {
         //# end of snippet: e3kit_lookup_public_keys
     }
 
-    func encrypt(text: String, for lookupResult: EThree.LookupResult? = nil) throws -> String {
+    func encrypt(text: String, for findUsersResult: FindUsersResult? = nil) throws -> String {
         guard let eThree = eThree else {
             throw AppError.eThreeNotInitialized
         }
@@ -182,7 +182,7 @@ class Device: NSObject {
             var encryptedText: String = ""
             for _ in (1...repetitions) {
                 //# start of snippet: e3kit_encrypt
-                encryptedText = try eThree.encrypt(text: text, for: lookupResult)
+                encryptedText = try eThree.encrypt(text: text, for: findUsersResult!)
                 //# end of snippet: e3kit_encrypt
             }
             let time = (timeInMs() - then)/Double(repetitions)
@@ -194,7 +194,7 @@ class Device: NSObject {
         }
     }
 
-    func decrypt(text: String, from senderPublicKey: VirgilPublicKey? = nil) throws -> String {
+    func decrypt(text: String, from user: Card? = nil) throws -> String {
         guard let eThree = eThree else {
             throw AppError.eThreeNotInitialized
         }
@@ -206,7 +206,7 @@ class Device: NSObject {
             var decryptedText: String = ""
             for _ in (1...repetitions) {
                 //# start of snippet: e3kit_decrypt
-                decryptedText = try eThree.decrypt(text: text, from: senderPublicKey)
+                decryptedText = try eThree.decrypt(text: text, from: user)
                 //# end of snippet: e3kit_decrypt
             }
             let time = (timeInMs() - then)/Double(repetitions)

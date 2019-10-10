@@ -46,8 +46,8 @@ class ViewController: UIViewController {
     let alice = Device(withIdentity: "Alice")
     let bob = Device(withIdentity: "Bob")
 
-    var bobLookup: EThree.LookupResult?
-    var aliceLookup: EThree.LookupResult?
+    var bobLookup: FindUsersResult?
+    var aliceLookup: FindUsersResult?
 
     func initializeUsers(_ completion: @escaping Completion) {
         alice.initialize { _ in
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
 
 
     func lookupPublicKeys(_ completion: @escaping Completion) {
-        alice.lookupPublicKeys(of: [bob.identity]) {
+        alice.findUsers(with: [bob.identity]) {
             switch $0 {
             case .failure:
                 break
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
                 self.bobLookup = lookup
             }
 
-            self.bob.lookupPublicKeys(of: [self.alice.identity]) {
+            self.bob.findUsers(with: [self.alice.identity]) {
                 switch $0 {
                 case .failure:
                     break
@@ -89,9 +89,9 @@ class ViewController: UIViewController {
 
     func encryptAndDecrypt() throws {
         let aliceEncryptedText = try alice.encrypt(text: "Hello \(bob.identity)! How are you?", for: bobLookup)
-        _ = try bob.decrypt(text: aliceEncryptedText, from: aliceLookup![alice.identity])
+        _ = try bob.decrypt(text: aliceEncryptedText, from: bobLookup?[bob.identity])
         let bobEncryptedText = try bob.encrypt(text: "Hello \(alice.identity)! How are you?", for: aliceLookup)
-        _  = try alice.decrypt(text: bobEncryptedText, from: bobLookup![bob.identity])
+        _  = try alice.decrypt(text: bobEncryptedText, from: bobLookup?[bob.identity])
     }
 }
 
