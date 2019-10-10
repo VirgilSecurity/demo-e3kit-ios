@@ -104,14 +104,12 @@ class Device: NSObject {
         //# end of snippet: e3kit_jwt_callback
 
         //# start of snippet: e3kit_initialize
-        EThree.initialize(tokenCallback: tokenCallback) { eThree, error in
-            if let error = error {
-                self._log("Failed initializing: \(error)")
-            } else {
-                self._log("Initialized")
-            }
-
-            self.eThree = eThree
+        do {
+            eThree = try EThree(identity: identity, tokenCallback: tokenCallback)
+            self._log("Initialized")
+            completion?(nil)
+        } catch let error {
+            self._log("Failed initializing: \(error)")
             completion?(error)
         }
         //# end of snippet: e3kit_initialize
