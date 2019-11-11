@@ -43,8 +43,8 @@ class ViewController: UIViewController {
         }
     }
 
-    let alice = Device(withIdentity: "Alicer")
-    let bob = Device(withIdentity: "Bobt")
+    let alice = Device(withIdentity: "Alice")
+    let bob = Device(withIdentity: "Bob")
 
     var bobLookup: FindUsersResult?
     var aliceLookup: FindUsersResult?

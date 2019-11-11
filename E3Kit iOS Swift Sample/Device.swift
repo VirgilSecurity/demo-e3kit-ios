@@ -179,9 +179,9 @@ class Device: NSObject {
             let repetitions = benchmarking ? 100 : 1
             var encryptedText: String = ""
             for _ in (1...repetitions) {
-                //# start of snippet: e3kit_encrypt
-                encryptedText = try eThree.encrypt(text: text, for: findUsersResult!)
-                //# end of snippet: e3kit_encrypt
+                //# start of snippet: e3kit_auth_encrypt
+                encryptedText = try eThree.authEncrypt(text: text, for: findUsersResult!)
+                //# end of snippet: e3kit_auth_encrypt
             }
             let time = (timeInMs() - then)/Double(repetitions)
             self._log("Encrypted and signed: '\(encryptedText)'. Took: \(time)ms")
@@ -203,9 +203,9 @@ class Device: NSObject {
             let repetitions = benchmarking ? 100 : 1
             var decryptedText: String = ""
             for _ in (1...repetitions) {
-                //# start of snippet: e3kit_decrypt
-                decryptedText = try eThree.decrypt(text: text, from: user)
-                //# end of snippet: e3kit_decrypt
+                //# start of snippet: e3kit_auth_decrypt
+                decryptedText = try eThree.authDecrypt(text: text, from: user)
+                //# end of snippet: e3kit_auth_decrypt
             }
             let time = (timeInMs() - then)/Double(repetitions)
             self._log("Decrypted and verified: '\(decryptedText)'. Took: \(time)ms")
