@@ -173,32 +173,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample-frameworks.sh",
-				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCCommon.framework",
-				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCFoundation.framework",
-				"${PODS_ROOT}/VSCCrypto/Carthage/iOS/VSCPythia.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilCrypto/VirgilCrypto.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilCryptoFoundation/VirgilCryptoFoundation.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilCryptoPythia/VirgilCryptoPythia.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilE3Kit/VirgilE3Kit.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilSDK/VirgilSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/VirgilSDKPythia/VirgilSDKPythia.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCCommon.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCFoundation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VSCPythia.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCrypto.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoFoundation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilCryptoPythia.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilE3Kit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirgilSDKPythia.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-E3Kit iOS Swift Sample/Pods-E3Kit iOS Swift Sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
