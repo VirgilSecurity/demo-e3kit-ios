@@ -6,5 +6,5 @@ target 'E3Kit iOS Swift Sample' do
   use_frameworks!
 
   # Pods for E3Kit iOS Swift Sample
-  pod 'VirgilE3Kit', '~> 0.7.0'
+  pod 'VirgilE3Kit', '~> 0.8.0'
 end

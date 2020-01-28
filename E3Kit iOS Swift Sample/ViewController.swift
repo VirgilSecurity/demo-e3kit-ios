@@ -65,7 +65,6 @@ class ViewController: UIViewController {
         }
     }
 
-
     func lookupPublicKeys(_ completion: @escaping Completion) {
         alice.findUsers(with: [bob.identity]) {
             switch $0 {
