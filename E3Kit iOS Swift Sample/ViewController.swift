@@ -43,8 +43,8 @@ class ViewController: UIViewController {
         }
     }
 
-    let alice = Device(withIdentity: "Alice")
-    let bob = Device(withIdentity: "Bob")
+    let alice = Device(withIdentity: "Alice_0912302193")
+    let bob = Device(withIdentity: "Bob_019231029310293")
 
     var bobLookup: FindUsersResult?
     var aliceLookup: FindUsersResult?
@@ -64,7 +64,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
 
     func lookupPublicKeys(_ completion: @escaping Completion) {
         alice.findUsers(with: [bob.identity]) {

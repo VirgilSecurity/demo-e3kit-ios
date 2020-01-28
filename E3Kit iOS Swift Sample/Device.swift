@@ -109,7 +109,7 @@ class Device: NSObject {
             self._log("Initialized")
             completion?(nil)
         } catch let error {
-            self._log("Failed initializing: \(error)")
+            self._log("Failed initializing: \(error.localizedDescription)")
             completion?(error)
         }
         //# end of snippet: e3kit_initialize
@@ -130,7 +130,7 @@ class Device: NSObject {
         //# start of snippet: e3kit_register
         eThree.register { error in
             if let error = error {
-                self._log("Failed registering: \(error)")
+                self._log("Failed registering: \(error.localizedDescription)")
             }
 
             if error as? EThreeError == .userIsAlreadyRegistered {
@@ -161,7 +161,7 @@ class Device: NSObject {
                 self._log("Looked up \(identities)'s public key")
                 completion?(.success(result))
             } else if let error = error {
-                self._log("Failed looking up \(identities)'s public key: \(error)")
+                self._log("Failed looking up \(identities)'s public key: \(error.localizedDescription)")
                 completion?(.failure(error))
             }
         }
@@ -187,7 +187,7 @@ class Device: NSObject {
             self._log("Encrypted and signed: '\(encryptedText)'. Took: \(time)ms")
             return encryptedText
         } catch(let error) {
-            self._log("Failed encrypting and signing: \(error)")
+            self._log("Failed encrypting and signing: \(error.localizedDescription)")
             throw error
         }
     }
@@ -211,7 +211,7 @@ class Device: NSObject {
             self._log("Decrypted and verified: '\(decryptedText)'. Took: \(time)ms")
             return decryptedText
         } catch(let error) {
-            self._log("Failed decrypting and verifying: \(error)")
+            self._log("Failed decrypting and verifying: \(error.localizedDescription)")
             throw error
         }
     }
