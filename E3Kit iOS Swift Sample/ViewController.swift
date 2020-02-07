@@ -33,18 +33,18 @@ class ViewController: UIViewController {
                     self.alice.eThree?.createGroup(id: "groupalicebob6").start { result in
                         switch result {
                         case .success(let group):
-                            print(group.description)
+                            log("created group \(group)... trying to create again")
                             self.alice.eThree?.createGroup(id: "groupalicebob6").start { result in
                                 switch result {
                                 case .success(let group):
-                                    print(group.description)
+                                    log("created group again: \(group)")
                                 case .failure(let error):
-                                    print(error.localizedDescription)
+                                    log("failed creating group again: \(error)")
                                     break
                                 }
                             }
                         case .failure(let error):
-                            print(error.localizedDescription)
+                            log("failed creating group: \(error)")
                             break
                         }
                     }
