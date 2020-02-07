@@ -30,22 +30,33 @@ class ViewController: UIViewController {
         initializeUsers {
             log("\n----- EThree.register -----");
             self.registerUsers {
-                    self.alice.eThree?.createGroup(id: "groupalicebob6").start { result in
-                        switch result {
-                        case .success(let group):
-                            log("created group \(group)... trying to create again")
-                            self.alice.eThree?.createGroup(id: "groupalicebob6").start { result in
-                                switch result {
-                                case .success(let group):
-                                    log("created group again: \(group)")
-                                case .failure(let error):
-                                    log("failed creating group again: \(error)")
-                                    break
+                    self.lookupPublicKeys {
+                    let uuid = UUID().uuidString
+                    self.alice.eThree?.createGroup(id: uuid, with: self.bobLookup).start { result in
+                            switch result {
+                            case .success(let group):
+                                log("created group \(group)...")
+                                log("bob will rotate key and load group...")
+                                try? self.bob.eThree?.cleanUp()
+                                self.bob.eThree?.rotatePrivateKey { error in
+                                    if let error = error {
+                                        log("failed rotating: \(error)")
+                                    }
+                                    
+                                    self.bob.eThree?.loadGroup(id: uuid, initiator: self.aliceLookup![self.alice.identity]!).start { result in
+                                        switch result {
+                                        case .success(let group):
+                                            log("bob loaded group: \(group)")
+                                        case .failure(let error):
+                                            log("bob failed loading group: \(error)")
+                                        }
+
+                                    }
                                 }
+                            case .failure(let error):
+                                log("failed creating group: \(error)")
+                                break
                             }
-                        case .failure(let error):
-                            log("failed creating group: \(error)")
-                            break
                         }
                     }
             }
