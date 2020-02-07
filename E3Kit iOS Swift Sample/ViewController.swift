@@ -30,15 +30,24 @@ class ViewController: UIViewController {
         initializeUsers {
             log("\n----- EThree.register -----");
             self.registerUsers {
-                log("\n----- EThree.lookupPublicKeys -----");
-                self.lookupPublicKeys {
-                    do {
-                        log("\n----- EThree.encrypt & EThree.decrypt -----");
-                        try self.encryptAndDecrypt()
-                    } catch(let e) {
-                        log(e)
+                    self.alice.eThree?.createGroup(id: "groupalicebob6").start { result in
+                        switch result {
+                        case .success(let group):
+                            print(group.description)
+                            self.alice.eThree?.createGroup(id: "groupalicebob6").start { result in
+                                switch result {
+                                case .success(let group):
+                                    print(group.description)
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                    break
+                                }
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                            break
+                        }
                     }
-                }
             }
         }
     }
